@@ -1,6 +1,4 @@
 from flask import request
-from flask_bcrypt import generate_password_hash
-from db import DB
 
 def create_user():
     # Parse all arguments for validity
