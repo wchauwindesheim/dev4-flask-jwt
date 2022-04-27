@@ -21,5 +21,5 @@ def create_user():
     # Insert the user into the database
     id = DB.insert(qry, args)
 
-    # Return the user id
+    # Return a message and the user id
     return {'message': 'success', 'id': id}, 201
