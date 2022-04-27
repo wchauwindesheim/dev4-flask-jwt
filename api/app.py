@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_jwt_extended import JWTManager
 from flask_cors import CORS
-from db import create_database
+from db import DB
 from resources.user import create_user
 from security import login, me
 
@@ -26,5 +26,5 @@ app.add_url_rule('/me', None, me, methods=['GET'])
 
 # Start app
 if __name__ == '__main__':
-    create_database()
+    DB.create()
     app.run()
