@@ -1,6 +1,8 @@
+from crypt import methods
 from flask import Flask
 from flask_cors import CORS
 from db import DB
+from resources.user import create_user
 
 # Create a new Flask application
 app = Flask(__name__)
@@ -14,7 +16,7 @@ CORS(app)
 # ============================ Routes ============================
 
 # JWT routes
-
+app.add_url_rule('/users', None, create_user, methods = ["POST"])
 
 # Start app
 if __name__ == '__main__':
